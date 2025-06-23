@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: repeat(3, 200px);
+      gap: 1rem;
+      justify-content: center;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .card {
+      width: 200px;
+      height: 260px;
+      perspective: 1000px;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      cursor: pointer;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    /* Colores distintos para cada tarjeta */
+    .card-1 .card-front { background-color: #FFB3BA; }
+    .card-2 .card-front { background-color: #FFDFBA; }
+    .card-3 .card-front { background-color: #FFFFBA; }
+    .card-4 .card-front { background-color: #BAFFC9; }
+    .card-5 .card-front { background-color: #BAE1FF; }
+    .card-6 .card-front { background-color: #E2BAFF; }
+    .card-7 .card-front { background-color: #FFBAF2; }
+    .card-8 .card-front { background-color: #baffed; }
+    .card-9 .card-front { background-color: #D0D0D0; }
+    .card-front h3 {
+      margin: 0;
+      text-align: center;
+    }
+    .card-back {
+      background-color: #fafafa;
+      transform: rotateY(180deg);
+      text-align: left;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+  </style>
+  <title>Tarjetas Interactivas - Herramientas de IA</title>
+</head>
+<body>
+  <!-- 1 -->
+  <div class="card card-1" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>ChatGPT</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Apoyo para análisis cualitativo y cuantitativo, redacción de informes, generación de ideas e interpretación textual.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Permite sistematizar hallazgos, redactar informes, generar indicadores o categorías temáticas y sugerir enfoques para interpretar datos.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 2 -->
+  <div class="card card-2" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Claude</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Análisis cualitativo profundo, síntesis de documentos extensos y comparación temática.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Ideal para leer entrevistas largas, comparar planes, sintetizar documentos técnicos y generar explicaciones a partir de corpus grandes.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 3 -->
+  <div class="card card-3" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>DeepSeek</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Asistente conversacional capaz de razonamiento matemático, comprensión de código y análisis contextual en lenguaje natural.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Útil para generar código estadístico, interpretar patrones en datos, resumir documentos técnicos o legales y apoyar el diseño de instrumentos evaluativos con lógica de análisis.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="card card-4" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Gemini</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Interpretación de datos estructurados y no estructurados, combinando con búsquedas contextuales en la web.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Ayuda a interpretar datos y redactar explicaciones para informes, además de buscar y contrastar información contextual relevante.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 5 -->
+  <div class="card card-5" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Julius</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Exploración automatizada de datos cuantitativos estructurados.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Permite analizar rápidamente bases de datos, identificar patrones y generar explicaciones preliminares con diversas visualizaciones.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 6 -->
+  <div class="card card-6" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>ChatCSV</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Consulta y exploración de datos cuantitativos en CSV mediante preguntas naturales, con soporte gráfico básico.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Facilita el acceso a análisis descriptivos iniciales (promedios, conteos) y visualizaciones ligeras.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 7 -->
+  <div class="card card-7" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Power BI</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Creación de reportes visuales, dashboards interactivos y monitoreo de datos en tiempo real.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Permite comparar resultados por grupos o periodos y generar paneles para seguimiento de metas y eficiencia.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 8 -->
+  <div class="card card-8" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Tableau</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Visualización avanzada e interactiva de grandes volúmenes de datos cuantitativos.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Facilita el análisis de tendencias y desigualdades, presentando resultados desagregados con tableros intuitivos.</p>
+      </div>
+    </div>
+  </div>
+  <!-- 9 -->
+  <div class="card card-9" onclick="this.classList.toggle('flipped')">
+    <div class="card-inner">
+      <div class="card-face card-front">
+        <h3>Atlas.ti</h3>
+      </div>
+      <div class="card-face card-back">
+        <p><strong>Función principal:</strong> Codificación, análisis temático y visualización de relaciones cualitativas.</p>
+        <p><strong>¿Cómo apoya la evaluación?</strong> Facilita el tratamiento sistemático de datos cualitativos, identificando patrones y construyendo matrices de coocurrencias.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // El efecto flip está manejado por el onclick en cada tarjeta
+  </script>
+</body>
+</html>
